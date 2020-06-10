@@ -1,1 +1,71 @@
-f
+# taking student Id as input
+
+DISPLAY "Enter a StudentID? "
+
+READ studentId
+
+# reading how many classes student want to opt for
+
+DISPLAY "Enter how many classes you want to add? "
+
+DISPLAY "**1 class free if you opt for three classes**"
+
+READ no_of_classes
+
+# checking if user enters more than 3 classes
+
+IF no_of_classes > 3 THEN
+
+OUTPUT "More than 3 classes not allowed, max allowed is 3 classes"
+
+EXIT
+
+ENDIF
+
+# reading class titles of each of the class user enters
+
+FOR i <- 1 TO no_of_classes
+
+OUTPUT "Enter the class title"
+
+READ class[i]
+
+ENDFOR
+
+# reading number of hours user work per week
+
+DISPLAY "Enter number of hours you work per week? "
+
+READ no_of_hours
+
+# if no of classes opted is 3
+
+IF no_of_classes == 3 THEN
+
+# one class free thats why subtracting 150
+
+class_cost = 150 * no_of_classes - 150
+
+# calculating the bill
+
+bill = class_cost + (5/100) * class_cost
+
+# if no of hours greater than 20 per week
+
+IF no_of_hours > 20
+
+THEN
+
+OUTPUT "Please make an appointment with faculty advisor"
+
+ENDIF
+
+# if no of classes opted is less than 3
+
+ELSE
+
+class_cost = 150 * no_of_classes
+
+bill = class_cost + (5/100) * class_cost
+
+ENDIF
